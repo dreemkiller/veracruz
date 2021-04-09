@@ -42,3 +42,6 @@ pub use self::vsocket::*;
 pub mod nitro_enclave;
 #[cfg(feature = "nitro")]
 pub use self::nitro_enclave::*;
+
+#[cfg(feature = "sgx")]
+pub mod csr;

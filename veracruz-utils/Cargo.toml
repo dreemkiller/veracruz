@@ -7,7 +7,7 @@ description = "Miscellaneous and common code used by multiple Veracruz component
 
 [features]
 
-sgx = ["sgx_tstd", "serde/mesalock_sgx", "serde_json/mesalock_sgx", "serde_json/alloc"]
+sgx = ["sgx_tstd", "serde/mesalock_sgx", "serde_json/mesalock_sgx", "serde_json/alloc", "ring"]
 tz = ["serde_json/std"]
 std = ["x509-parser", "serde/std", "rustls","serde_json/std", "actix-web", "futures", "actix-http", "failure"]
 nitro = ["serde_json/std", "nix", "byteorder"]
@@ -26,6 +26,7 @@ failure = { version = "0.1", optional = true }
 err-derive = "0.2"
 nix = { version = "0.15", optional = true }
 byteorder = { version = "1.3", optional = true }
+ring = { git = "https://github.com/veracruz-project/ring.git", version = "=0.16.11", branch = "veracruz", features = ["mesalock_sgx"], optional = true }
 
 [build-dependencies]
 uuid = { version = "0.7", features = ["v4"] }
